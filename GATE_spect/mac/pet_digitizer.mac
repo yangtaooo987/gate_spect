@@ -1,0 +1,22 @@
+
+############################# DIGITIZER ##############################
+/gate/digitizer/Singles/insert adder
+/gate/digitizer/Singles/insert blurring
+
+#### Linear energy resolution
+/gate/digitizer/Singles/blurring/setLaw linear
+/gate/digitizer/Singles/blurring/linear/setResolution 0.10
+/gate/digitizer/Singles/blurring/linear/setEnergyOfReference 159 keV
+
+/gate/digitizer/Singles/insert spblurring
+/gate/digitizer/Singles/spblurring/setSpresolution 3.0 mm
+
+/gate/digitizer/name Photopeak
+/gate/digitizer/insert singleChain
+/gate/digitizer/Photopeak/setInputName Singles
+/gate/digitizer/Photopeak/insert thresholder
+/gate/digitizer/Photopeak/thresholder/setThreshold 143.0 keV
+/gate/digitizer/Photopeak/insert upholder
+/gate/digitizer/Photopeak/upholder/setUphold 175.0 keV
+
+

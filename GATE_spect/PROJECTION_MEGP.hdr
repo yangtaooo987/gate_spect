@@ -1,0 +1,87 @@
+!INTERFILE :=
+!imaging modality := nucmed
+!version of keys := 3.3
+date of keys := 1992:01:01
+;
+!GENERAL DATA :=
+data description := GATE simulation
+!data starting block := 0
+!name of data file := PROJECTION_MEGP.sin
+;
+!GENERAL IMAGE DATA :=
+!type of data := TOMOGRAPHIC
+!total number of images := 120
+study date := 2024:07:20
+study time := 13:24:49
+imagedata byte order := LITTLEENDIAN
+number of energy windows := 1
+;
+energy window [1] := Photopeak
+energy window lower level [1] := 143
+energy window upper level [1] := 175
+;
+!SPECT STUDY (general) :=
+number of detector heads := 2
+;
+!number of images/energy window := 120
+!process status := Acquired
+!matrix size [1] := 230
+!matrix size [2] := 170
+!number format := unsigned integer
+!number of bytes per pixel := 2
+scaling factor (mm/pixel) [1] := 2.34
+scaling factor (mm/pixel) [2] := 2.34
+!number of projections := 60
+!extent of rotation := 180
+!time per projection (sec) := 1
+study duration (sec) := 60
+!maximum pixel count := 0
+;
+!SPECT STUDY (acquired data) :=
+!direction of rotation := CW
+start angle := 0
+first projection angle in data set := 0
+acquisition mode := stepped
+orbit := Circular
+;
+!number of images/energy window := 120
+!process status := Acquired
+!matrix size [1] := 230
+!matrix size [2] := 170
+!number format := unsigned integer
+!number of bytes per pixel := 2
+scaling factor (mm/pixel) [1] := 2.34
+scaling factor (mm/pixel) [2] := 2.34
+!number of projections := 60
+!extent of rotation := 180
+!time per projection (sec) := 1
+study duration (sec) := 60
+!maximum pixel count := 0
+;
+!SPECT STUDY (acquired data) :=
+!direction of rotation := CW
+start angle := 180
+first projection angle in data set := 180
+acquisition mode := stepped
+orbit := Circular
+;
+;GATE GEOMETRY :=
+;head x dimension (cm) := 37.5
+;head y dimension (cm) := 64
+;head z dimension (cm) := 53
+;head material := Air
+;head x translation (cm) := -40.75
+;head y translation (cm) := 0
+;head z translation (cm) := 0
+;crystal x dimension (cm) := 0.9525
+;crystal y dimension (cm) := 54
+;crystal z dimension (cm) := 40
+;crystal material := NaI
+;
+;GATE SIMULATION :=
+;number of runs := 60
+;
+;GATE SIMULATION :=
+;number of EM events := 0
+;
+!END OF INTERFILE :=

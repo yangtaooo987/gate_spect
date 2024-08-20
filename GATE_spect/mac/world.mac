@@ -1,0 +1,10 @@
+
+############################### WORLD ################################
+/gate/world/geometry/setXLength 150. cm
+/gate/world/geometry/setYLength 150. cm
+/gate/world/geometry/setZLength 260. cm
+/gate/world/vis/forceWireframe
+/gate/world/vis/setVisible 0
+/gate/world/vis/setColor green
+/gate/world/setMaterial Air
+

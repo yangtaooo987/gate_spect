@@ -1,0 +1,8 @@
+############################# PHANTOM #############################
+/gate/world/daughters/name voxelPhantom
+/gate/world/daughters/insert ImageNestedParametrisedVolume
+/gate/voxelPhantom/geometry/setImage Attenuation_Jas.h33
+/gate/voxelPhantom/geometry/setRangeToMaterialFile Attenuation_Jas_Range.dat
+/gate/voxelPhantom/placement/setTranslation  0. 0. 0. cm
+##/gate/voxelPhantom/setSkipEqualMaterials 1
+/gate/voxelPhantom/attachPhantomSD

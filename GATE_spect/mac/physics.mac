@@ -1,0 +1,8 @@
+############################## PHYSICS ###############################
+/gate/physics/addPhysicsList emstandard_opt4
+# Need this to turn off atomic de-ex
+/process/em/pixe false
+
+##############################  C U T S
+/gate/physics/Gamma/SetCutInRegion      SPECThead 0.1 cm
+/gate/physics/Electron/SetCutInRegion   SPECThead 0.1 cm

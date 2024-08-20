@@ -1,0 +1,195 @@
+
+############################## DETECTOR ##############################
+
+##### SPECT_HEAD ######
+/gate/world/daughters/name SPECThead
+/gate/world/daughters/insert box
+/gate/SPECThead/geometry/setXLength 37.5 cm
+/gate/SPECThead/geometry/setYLength 64.0 cm
+/gate/SPECThead/geometry/setZLength 53.0 cm
+/gate/SPECThead/placement/setTranslation -40.75 0.0  0.0 cm  # source @ 22 cm (-40.75+37.5/2) for the Jaszczak phantom
+/gate/SPECThead/setMaterial Air
+/gate/SPECThead/vis/setColor cyan
+
+/gate/SPECThead/daughters/name coverPlastic
+/gate/SPECThead/daughters/insert box
+/gate/coverPlastic/setMaterial Plastic
+/gate/coverPlastic/geometry/setXLength 0.2 cm
+/gate/coverPlastic/geometry/setYLength 58.0 cm
+/gate/coverPlastic/geometry/setZLength 46.0 cm
+/gate/coverPlastic/placement/setTranslation 18.65 0.0 0.0 cm
+/gate/coverPlastic/vis/setColor cyan
+/gate/coverPlastic/vis/forceWireframe
+/gate/coverPlastic/attachPhantomSD
+
+##### COLLIMATOR ######
+#Collimator should be rotated to be able to do 2 rotations for the hexagon to be properly positioned
+/gate/SPECThead/daughters/name collimator
+/gate/SPECThead/daughters/insert box
+/gate/collimator/geometry/setXLength 53.0 cm
+/gate/collimator/geometry/setYLength 64.0 cm
+/gate/collimator/geometry/setZLength 5.84 cm
+/gate/collimator/placement/alignToX # 1st Rotation
+/gate/collimator/placement/setTranslation 15.63 0.0 0.0 cm
+/gate/collimator/setMaterial CollLead
+/gate/collimator/vis/setColor grey
+/gate/collimator/vis/forceWireframe
+/gate/collimator/attachPhantomSD
+
+# Insert the first hole of air in the collimator
+/gate/collimator/daughters/name hole
+/gate/collimator/daughters/insert hexagone
+/gate/hole/geometry/setHeight 5.84 cm
+/gate/hole/geometry/setRadius 1.7 mm
+/gate/hole/placement/setRotationAxis 0 0 1 # 2nd Rotation
+/gate/hole/placement/setRotationAngle 90 deg
+/gate/hole/setMaterial Air
+/gate/hole/vis/setColor white
+/gate/hole/vis/forceSolid
+
+# Repeat the hole in an array
+/gate/hole/repeaters/insert cubicArray
+## orientation change to match the star artifact
+/gate/hole/cubicArray/setRepeatNumberX 93
+/gate/hole/cubicArray/setRepeatNumberY 73
+/gate/hole/cubicArray/setRepeatNumberZ 1
+/gate/hole/cubicArray/setRepeatVector  4.26 7.3785 0.0 mm
+
+# Repeat these holes in a linear
+/gate/hole/repeaters/insert linear
+/gate/hole/linear/setRepeatNumber 2
+/gate/hole/linear/setRepeatVector 2.13 3.6893 0.0 mm
+
+#### AL CASING ####
+/gate/SPECThead/daughters/name Al_casing
+/gate/SPECThead/daughters/insert box
+/gate/Al_casing/setMaterial Aluminium
+/gate/Al_casing/geometry/setXLength 19.205 cm
+/gate/Al_casing/geometry/setYLength 64.0 cm
+/gate/Al_casing/geometry/setZLength 53.0 cm
+/gate/Al_casing/placement/setTranslation 3.1075 0.0 0.0 cm
+/gate/Al_casing/vis/setColor magenta
+/gate/Al_casing/vis/forceWireframe
+/gate/Al_casing/attachPhantomSD
+
+#### LEAD CASING ####
+/gate/Al_casing/daughters/name lead_casing
+/gate/Al_casing/daughters/insert box
+/gate/lead_casing/setMaterial Lead
+/gate/lead_casing/geometry/setXLength 16.505 cm
+/gate/lead_casing/geometry/setYLength 58.6 cm
+/gate/lead_casing/geometry/setZLength 47.6 cm
+/gate/lead_casing/placement/setTranslation 1.35 0.0 0.0 cm
+/gate/lead_casing/vis/setColor grey
+/gate/lead_casing/vis/forceWireframe
+/gate/lead_casing/attachPhantomSD
+
+##### CRYSTAL CASING #####
+/gate/lead_casing/daughters/name cry_cover
+/gate/lead_casing/daughters/insert box
+/gate/cry_cover/setMaterial Lead
+/gate/cry_cover/geometry/setXLength 1.5525 cm
+/gate/cry_cover/geometry/setYLength 54.0 cm
+/gate/cry_cover/geometry/setZLength 40.0 cm
+/gate/cry_cover/placement/setTranslation 7.47625 0.0 0.0 cm
+/gate/cry_cover/vis/setColor yellow
+/gate/cry_cover/attachPhantomSD
+
+# Air Gap
+/gate/cry_cover/daughters/name Air_gap
+/gate/cry_cover/daughters/insert box
+/gate/Air_gap/setMaterial Air
+/gate/Air_gap/geometry/setXLength 0.5 cm
+/gate/Air_gap/geometry/setYLength 54.0 cm
+/gate/Air_gap/geometry/setZLength 40.0 cm
+/gate/Air_gap/placement/setTranslation 0.52625 0.0 0.0 cm
+/gate/Air_gap/vis/setColor red
+/gate/Air_gap/vis/forceSolid
+
+# Al_sheet
+/gate/cry_cover/daughters/name Al_sheet
+/gate/cry_cover/daughters/insert box
+/gate/Al_sheet/setMaterial Aluminium
+/gate/Al_sheet/geometry/setXLength 0.1 cm
+/gate/Al_sheet/geometry/setYLength 54.0 cm
+/gate/Al_sheet/geometry/setZLength 40.0 cm
+/gate/Al_sheet/placement/setTranslation 0.22625 0.0 0.0 cm
+/gate/Al_sheet/vis/setColor white
+/gate/Al_sheet/vis/forceWireframe
+/gate/Al_sheet/attachPhantomSD
+
+# Crystal
+/gate/cry_cover/daughters/name crystal
+/gate/cry_cover/daughters/insert box
+/gate/crystal/setMaterial NaI
+/gate/crystal/geometry/setXLength 0.9525 cm
+/gate/crystal/geometry/setYLength 54.0 cm
+/gate/crystal/geometry/setZLength 40.0 cm
+/gate/crystal/placement/setTranslation -0.3 0.0 0.0 cm
+/gate/crystal/vis/setColor yellow
+#/gate/crystal/attachCrystalSD
+/gate/crystal/vis/forceSolid
+
+### BACK MATERIAL
+/gate/lead_casing/daughters/name back_material
+/gate/lead_casing/daughters/insert box
+/gate/back_material/setMaterial Lead
+/gate/back_material/geometry/setXLength 13.1525 cm
+/gate/back_material/geometry/setYLength 55.0 cm
+/gate/back_material/geometry/setZLength 44.0 cm
+/gate/back_material/placement/setTranslation 0.12375 0.0 0.0 cm
+/gate/back_material/attachPhantomSD
+/gate/back_material/vis/forceSolid
+
+/gate/back_material/daughters/name Light_Guide
+/gate/back_material/daughters/insert box
+/gate/Light_Guide/setMaterial Glass
+/gate/Light_Guide/geometry/setXLength 0.9525 cm
+/gate/Light_Guide/geometry/setYLength 54.0 cm
+/gate/Light_Guide/geometry/setZLength 40.0 cm
+/gate/Light_Guide/placement/setTranslation 6.1 0.0 0.0 cm
+/gate/Light_Guide/vis/setColor white
+/gate/Light_Guide/vis/forceWireframe
+/gate/Light_Guide/attachPhantomSD
+/gate/Light_Guide/vis/forceSolid
+
+/gate/back_material/daughters/name PMTs
+/gate/back_material/daughters/insert box
+/gate/PMTs/setMaterial PMTs
+/gate/PMTs/geometry/setXLength 11.7 cm
+/gate/PMTs/geometry/setYLength 54.0 cm
+/gate/PMTs/geometry/setZLength 40.0 cm
+/gate/PMTs/placement/setTranslation -0.22625 0.0 0.0 cm
+/gate/PMTs/vis/setColor magenta
+/gate/PMTs/vis/forceWireframe
+/gate/PMTs/attachPhantomSD
+/gate/PMTs/vis/forceSolid
+
+/gate/back_material/daughters/name electronics
+/gate/back_material/daughters/insert box
+/gate/electronics/setMaterial ElectronicBoard
+/gate/electronics/geometry/setXLength 0.5 cm
+/gate/electronics/geometry/setYLength 54.0 cm
+/gate/electronics/geometry/setZLength 40.0 cm
+/gate/electronics/placement/setTranslation -6.32625 0.0 0.0 cm
+/gate/electronics/vis/setColor green
+/gate/electronics/vis/forceWireframe
+/gate/electronics/attachPhantomSD
+/gate/electronics/vis/forceSolid
+
+/gate/SPECThead/repeaters/insert ring
+/gate/SPECThead/ring/setRepeatNumber 2
+/gate/SPECThead/ring/setPoint1 0.0 0.0 0.0 cm
+/gate/SPECThead/ring/setPoint2 0.0 0.0 1.0 cm
+
+/gate/SPECThead/moves/insert orbiting
+/gate/SPECThead/orbiting/setSpeed 3 deg/s # 120 Views over 360 degree
+/gate/SPECThead/orbiting/setPoint1 0. 0. 0. cm
+/gate/SPECThead/orbiting/setPoint2 0. 0. 1. cm
+
+######################## SENSITIVE DETECTORS #########################
+/gate/systems/SPECThead/crystal/attach crystal
+/gate/systems/SPECThead/describe
+/gate/crystal/attachCrystalSD
+
+

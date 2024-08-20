@@ -1,0 +1,31 @@
+
+############################# DIGITIZER ##############################
+/gate/digitizerMgr/crystal/SinglesDigitizer/Singles/insert adder
+/gate/digitizerMgr/crystal/SinglesDigitizer/Singles/insert energyResolution
+
+#### Linear energy resolution
+/gate/digitizerMgr/crystal/SinglesDigitizer/Singles/energyResolution/fwhm 0.10
+/gate/digitizerMgr/crystal/SinglesDigitizer/Singles/energyResolution/energyOfReference 159 keV
+
+/gate/digitizerMgr/crystal/SinglesDigitizer/Singles/insert spatialResolution
+/gate/digitizerMgr/crystal/SinglesDigitizer/Singles/spatialResolution/fwhm 3.0 mm
+
+#/gate/digitizerMgr/crystal/SinglesDigitizer-NULLspatialResolution/confineInsideOfSmallestElement true
+
+/gate/digitizerMgr/name Photopeak
+/gate/digitizerMgr/chooseSD crystal
+/gate/digitizerMgr/insert SinglesDigitizer
+/gate/digitizerMgr/crystal/SinglesDigitizer/Photopeak/setInputCollection Singles
+
+/gate/digitizerMgr/crystal/SinglesDigitizer/Photopeak/insert energyFraming
+/gate/digitizerMgr/crystal/SinglesDigitizer/Photopeak/energyFraming/setMin 143.0 keV
+/gate/digitizerMgr/crystal/SinglesDigitizer/Photopeak/energyFraming/setMax 175.0 keV
+
+
+#/gate/digitizerMgr/crystal/SinglesDigitizer/Singles/spatialResolution/confineInsideOfSmallestElement true
+#/gate/digitizerMgr/crystal/SinglesDigitizer/Singles/spatialResolution/verbose 0
+#/gate/digitizerMgr/crystal/SinglesDigitizer/Singles/insert energyFraming
+#/gate/digitizerMgr/crystal/SinglesDigitizer/Singles/energyFraming/setMin 143. keV
+#s/gate/digitizerMgr/crystal/SinglesDigitizer/Singles/energyFraming/setMax 175. keV
+
+

@@ -1,0 +1,214 @@
+
+############################## ACTIVITY I-123 ###############################
+#/gate/run/initialize
+# Turn off atomic de-ex after initialise (breaks scatter recording).
+/gate/physics/processList Initialized
+/process/em/fluo 0
+
+/gate/source/addSource VS_gamma voxel
+/gate/source/VS_gamma/reader/insert image
+/gate/source/VS_gamma/imageReader/translator/insert linear
+/gate/source/VS_gamma/imageReader/linearTranslator/setScale 0.0000003 Bq
+/gate/source/VS_gamma/imageReader/readFile Activity_Jas.h33
+/gate/source/VS_gamma/imageReader/verbose 1
+/gate/source/VS_gamma/gps/particle gamma
+/gate/source/VS_gamma/gps/ang/type iso
+/gate/source/VS_gamma/gps/ang/mintheta 0.0 deg
+/gate/source/VS_gamma/gps/ang/maxtheta 180.0 deg
+/gate/source/VS_gamma/gps/ang/minphi 0.0  deg
+/gate/source/VS_gamma/gps/ang/maxphi 360.0 deg
+
+# Force unstable
+/gate/source/VS_gamma/setForcedUnstableFlag  true
+# Half life is 0.550958 days
+/gate/source/VS_gamma/setForcedHalfLife 47602.8 s
+/gate/source/VS_gamma/gps/particle    gamma
+/gate/source/VS_gamma/gps/energytype  User
+/gate/source/VS_gamma/gps/histname    energy
+/gate/source/VS_gamma/gps/emin  0.150 MeV
+/gate/source/VS_gamma/gps/emax  1.03663 MeV
+
+# ---------------------------------------------------- #
+/gate/source/VS_gamma/gps/histpoint 0.1589999 0.0
+/gate/source/VS_gamma/gps/histpoint 0.159 83.6
+/gate/source/VS_gamma/gps/histpoint 0.1590001 0.0
+
+/gate/source/VS_gamma/gps/histpoint 0.17419999 0.0
+/gate/source/VS_gamma/gps/histpoint 0.1742 0.0008
+/gate/source/VS_gamma/gps/histpoint 0.1742001 0.0
+
+/gate/source/VS_gamma/gps/histpoint 0.18261999 0.0
+/gate/source/VS_gamma/gps/histpoint 0.18262 0.013
+/gate/source/VS_gamma/gps/histpoint 0.18262001 0.0
+
+/gate/source/VS_gamma/gps/histpoint 0.19069999 0.0
+/gate/source/VS_gamma/gps/histpoint 0.1907 0.0005
+/gate/source/VS_gamma/gps/histpoint 0.19070001 0.0
+
+/gate/source/VS_gamma/gps/histpoint 0.19217999 0.0
+/gate/source/VS_gamma/gps/histpoint 0.19218 0.0177
+/gate/source/VS_gamma/gps/histpoint 0.19218001 0.0
+
+/gate/source/VS_gamma/gps/histpoint 0.1972299 0.0
+/gate/source/VS_gamma/gps/histpoint 0.19723 0.00033
+/gate/source/VS_gamma/gps/histpoint 0.19723001 0.0
+
+/gate/source/VS_gamma/gps/histpoint 0.19822999 0.0
+/gate/source/VS_gamma/gps/histpoint 0.19823 0.0033
+/gate/source/VS_gamma/gps/histpoint 0.19823001 0.0
+
+/gate/source/VS_gamma/gps/histpoint 0.206799 0.0
+/gate/source/VS_gamma/gps/histpoint 0.2068 0.0033
+/gate/source/VS_gamma/gps/histpoint 0.2068001 0.0
+
+/gate/source/VS_gamma/gps/histpoint 0.20779999 0.0
+/gate/source/VS_gamma/gps/histpoint 0.2078 0.0011
+/gate/source/VS_gamma/gps/histpoint 0.2078001 0.0
+
+/gate/source/VS_gamma/gps/histpoint 0.247969999 0.0
+/gate/source/VS_gamma/gps/histpoint 0.24797 0.0693
+/gate/source/VS_gamma/gps/histpoint 0.247970001 0.0
+
+/gate/source/VS_gamma/gps/histpoint 0.25750999 0.0
+/gate/source/VS_gamma/gps/histpoint 0.25751 0.0015
+/gate/source/VS_gamma/gps/histpoint 0.257510001 0.0
+
+/gate/source/VS_gamma/gps/histpoint 0.2589999 0.0
+/gate/source/VS_gamma/gps/histpoint 0.259 0.0009
+/gate/source/VS_gamma/gps/histpoint 0.2590001 0.0
+
+/gate/source/VS_gamma/gps/histpoint 0.27835999 0.0
+/gate/source/VS_gamma/gps/histpoint 0.27836 0.0023
+/gate/source/VS_gamma/gps/histpoint 0.2783001 0.0
+
+/gate/source/VS_gamma/gps/histpoint 0.28102999 0.0
+/gate/source/VS_gamma/gps/histpoint 0.28103 0.072
+/gate/source/VS_gamma/gps/histpoint 0.28103001 0.0
+
+/gate/source/VS_gamma/gps/histpoint 0.28531999 0.0
+/gate/source/VS_gamma/gps/histpoint 0.28532 0.0043
+/gate/source/VS_gamma/gps/histpoint 0.28533001 0.0
+
+/gate/source/VS_gamma/gps/histpoint 0.29518999 0.0
+/gate/source/VS_gamma/gps/histpoint 0.29519 0.001588
+/gate/source/VS_gamma/gps/histpoint 0.29519001 0.0
+
+/gate/source/VS_gamma/gps/histpoint 0.3293799 0.0
+/gate/source/VS_gamma/gps/histpoint 0.32938 0.0026
+/gate/source/VS_gamma/gps/histpoint 0.32938001 0.0
+
+/gate/source/VS_gamma/gps/histpoint 0.33069999 0.0
+/gate/source/VS_gamma/gps/histpoint 0.3307 0.0116
+/gate/source/VS_gamma/gps/histpoint 0.3307001 0.0
+
+/gate/source/VS_gamma/gps/histpoint 0.34372999 0.0
+/gate/source/VS_gamma/gps/histpoint 0.34373 0.0043
+/gate/source/VS_gamma/gps/histpoint 0.34373001 0.0
+
+/gate/source/VS_gamma/gps/histpoint 0.34635999 0.0
+/gate/source/VS_gamma/gps/histpoint 0.34636 0.12
+/gate/source/VS_gamma/gps/histpoint 0.34636001 0.0
+
+/gate/source/VS_gamma/gps/histpoint 0.40501999 0.0
+/gate/source/VS_gamma/gps/histpoint 0.40502 0.0027
+/gate/source/VS_gamma/gps/histpoint 0.40502001 0.0
+
+/gate/source/VS_gamma/gps/histpoint 0.43749999 0.0
+/gate/source/VS_gamma/gps/histpoint 0.4375 0.0008
+/gate/source/VS_gamma/gps/histpoint 0.43750001 0.0
+
+/gate/source/VS_gamma/gps/histpoint 0.44001999 0.0
+/gate/source/VS_gamma/gps/histpoint 0.44002 0.388
+/gate/source/VS_gamma/gps/histpoint 0.44002001 0.0
+
+/gate/source/VS_gamma/gps/histpoint 0.45475999 0.0
+/gate/source/VS_gamma/gps/histpoint 0.45476 0.0034
+/gate/source/VS_gamma/gps/histpoint 0.45476001 0.0
+
+/gate/source/VS_gamma/gps/histpoint 0.50532999 0.0
+/gate/source/VS_gamma/gps/histpoint 0.50533 0.288
+/gate/source/VS_gamma/gps/histpoint 0.50533001 0.0
+
+/gate/source/VS_gamma/gps/histpoint 0.52896999 0.0
+/gate/source/VS_gamma/gps/histpoint 0.52897 1.27
+/gate/source/VS_gamma/gps/histpoint 0.52897001 0.0
+
+/gate/source/VS_gamma/gps/histpoint 0.53853999 0.0
+/gate/source/VS_gamma/gps/histpoint 0.53854 0.31
+/gate/source/VS_gamma/gps/histpoint 0.53854001 0.0
+
+/gate/source/VS_gamma/gps/histpoint 0.55604999 0.0
+/gate/source/VS_gamma/gps/histpoint 0.55605 0.0025
+/gate/source/VS_gamma/gps/histpoint 0.55605001 0.0
+
+/gate/source/VS_gamma/gps/histpoint 0.56278999 0.0
+/gate/source/VS_gamma/gps/histpoint 0.56279 0.0009
+/gate/source/VS_gamma/gps/histpoint 0.56279001 0.0
+
+/gate/source/VS_gamma/gps/histpoint 0.57399 0.0
+/gate/source/VS_gamma/gps/histpoint 0.574 0.005852
+/gate/source/VS_gamma/gps/histpoint 0.57401 0.0
+
+/gate/source/VS_gamma/gps/histpoint 0.57825999 0.0
+/gate/source/VS_gamma/gps/histpoint 0.57826 0.0016
+/gate/source/VS_gamma/gps/histpoint 0.57826001 0.0
+
+/gate/source/VS_gamma/gps/histpoint 0.59968999 0.0
+/gate/source/VS_gamma/gps/histpoint 0.59969 0.0026
+/gate/source/VS_gamma/gps/histpoint 0.59969001 0.0
+
+/gate/source/VS_gamma/gps/histpoint 0.61004999 0.0
+/gate/source/VS_gamma/gps/histpoint 0.61005 0.0011
+/gate/source/VS_gamma/gps/histpoint 0.61005001 0.0
+
+/gate/source/VS_gamma/gps/histpoint 0.62457999 0.0
+/gate/source/VS_gamma/gps/histpoint 0.62458 0.078
+/gate/source/VS_gamma/gps/histpoint 0.62458001 0.0
+
+/gate/source/VS_gamma/gps/histpoint 0.62825999 0.0
+/gate/source/VS_gamma/gps/histpoint 0.62826 0.0016
+/gate/source/VS_gamma/gps/histpoint 0.62826001 0.0
+
+/gate/source/VS_gamma/gps/histpoint 0.68793999 0.0
+/gate/source/VS_gamma/gps/histpoint 0.68794 0.0268
+/gate/source/VS_gamma/gps/histpoint 0.68794001 0.0
+
+/gate/source/VS_gamma/gps/histpoint 0.73586999 0.0
+/gate/source/VS_gamma/gps/histpoint 0.73587 0.047
+/gate/source/VS_gamma/gps/histpoint 0.73587001 0.0
+
+/gate/source/VS_gamma/gps/histpoint 0.76084999 0.0
+/gate/source/VS_gamma/gps/histpoint 0.76085 0.00063
+/gate/source/VS_gamma/gps/histpoint 0.76085001 0.0
+
+/gate/source/VS_gamma/gps/histpoint 0.78359999 0.0
+/gate/source/VS_gamma/gps/histpoint 0.7836 0.053
+/gate/source/VS_gamma/gps/histpoint 0.7836001 0.0
+
+/gate/source/VS_gamma/gps/histpoint 0.83709999 0.0
+/gate/source/VS_gamma/gps/histpoint 0.8371 0.00047
+/gate/source/VS_gamma/gps/histpoint 0.8371001 0.0
+
+/gate/source/VS_gamma/gps/histpoint 0.87751999 0.0
+/gate/source/VS_gamma/gps/histpoint 0.87752 0.00072
+/gate/source/VS_gamma/gps/histpoint 0.87752001 0.0
+
+/gate/source/VS_gamma/gps/histpoint 0.89479999 0.0
+/gate/source/VS_gamma/gps/histpoint 0.8948 0.0007
+/gate/source/VS_gamma/gps/histpoint 0.89480001 0.0
+
+/gate/source/VS_gamma/gps/histpoint 0.89819999 0.0
+/gate/source/VS_gamma/gps/histpoint 0.8982 0.0006
+/gate/source/VS_gamma/gps/histpoint 0.8982001 0.0
+
+/gate/source/VS_gamma/gps/histpoint 0.90911999 0.0
+/gate/source/VS_gamma/gps/histpoint 0.90912 0.0013
+/gate/source/VS_gamma/gps/histpoint 0.909120001 0.0
+
+/gate/source/VS_gamma/gps/histpoint 1.03662999 0.0
+/gate/source/VS_gamma/gps/histpoint 1.03663 0.00077
+/gate/source/VS_gamma/gps/histpoint 1.03663001 0.0
+
+#/gate/source/VS_gamma/setIntensity 1
+/gate/source/VS_gamma/setPosition -111.794907 -111.3251805 -83.75 mm
+/gate/source/VS_gamma/dump 1

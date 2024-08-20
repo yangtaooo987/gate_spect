@@ -1,0 +1,60 @@
+##########################################################
+# Verbosity
+##########################################################
+/control/execute mac/verbose.mac
+
+##########################################################
+# Material Database
+##########################################################
+/gate/geometry/setMaterialDatabase data/GateMaterials.db
+
+##########################################################
+# Geometry
+##########################################################
+/control/execute mac/world.mac
+/control/execute mac/spect_head.mac
+/control/execute mac/spect_digitizer.mac
+/control/execute mac/phantom.mac
+
+##########################################################
+# Physics
+##########################################################
+/control/execute mac/physics.mac
+
+##########################################################
+# Output
+##########################################################
+/control/execute mac/output.mac
+
+##########################################################
+# Initialisation
+##########################################################
+/gate/run/initialize
+
+##########################################################
+# Visualisation
+##########################################################
+#/control/execute mac/visu.mac
+
+##########################################################
+# Source
+##########################################################
+/control/execute mac/source.mac
+
+############################# VERBOSITY ##############################
+/control/verbose 2
+/run/verbose 2
+/gate/application/verbose 2
+
+############################### RANDOM ###############################
+/gate/random/setEngineName MersenneTwister
+/gate/random/setEngineSeed auto
+/gate/random/verbose 1
+
+############################### START ################################
+/gate/application/setTimeSlice      1.0  s
+/gate/application/setTimeStart      0.0    s
+/gate/application/setTimeStop       60.0  s #180 degree 2 heads
+
+/gate/application/startDAQ
+
